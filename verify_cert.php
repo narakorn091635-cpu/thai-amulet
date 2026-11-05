@@ -131,7 +131,7 @@ render_site_header('ระบบตรวจสอบใบเซอร์พร
                         <p><strong>วัด:</strong> <?php echo htmlspecialchars((string)$cert['temple_name'], ENT_QUOTES, 'UTF-8'); ?></p>
                         <p><strong>เกจิอาจารย์:</strong> <?php echo htmlspecialchars((string)$cert['monk_name'], ENT_QUOTES, 'UTF-8'); ?></p>
                         <p><strong>ปีสร้าง:</strong> <?php echo htmlspecialchars((string)($cert['year_created'] ?? 'ไม่ระบุ'), ENT_QUOTES, 'UTF-8'); ?></p>
-                        <p><strong>วันที่ออกใบรับรอง:</strong> <?php echo htmlspecialchars(date('d/m/Y', strtotime((string)$cert['issue_date'])), ENT_QUOTES, 'UTF-8'); ?></p>
+                        <p><strong>วันที่ออกใบรับรอง:</strong> <?php echo !empty($cert['issue_date']) && strtotime((string)$cert['issue_date']) ? htmlspecialchars(date('d/m/Y', strtotime((string)$cert['issue_date'])), ENT_QUOTES, 'UTF-8') : 'ไม่ระบุ'; ?></p>
                         <p><strong>ผู้เชี่ยวชาญผู้ตรวจประเมิน:</strong> <?php echo htmlspecialchars((string)$cert['inspector_name'], ENT_QUOTES, 'UTF-8'); ?></p>
                         <p style="word-break: break-all; margin-top: 0.5rem; font-size: 0.75rem; opacity: 0.7;">
                             <strong>Security Signature Hash:</strong> <code><?php echo htmlspecialchars((string)$cert['security_hash'], ENT_QUOTES, 'UTF-8'); ?></code>
