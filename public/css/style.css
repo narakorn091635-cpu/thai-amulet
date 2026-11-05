@@ -1,0 +1,795 @@
+/* ==========================================================================
+   Thai Amulet E-commerce & Real-time Auction Platform
+   File: css/style.css
+   Mutation Log: 2026-11-05 - Upgraded to Ultra-Luxury Gold & Deep Crimson Royal Heritage Design System
+   ========================================================================== */
+
+:root {
+  /* Royal Dark Crimson & Obsidian Palette */
+  --bg-dark: #120104;
+  --bg-darker: #0a0002;
+  --bg-card: rgba(36, 4, 8, 0.75);
+  --bg-card-hover: rgba(54, 6, 12, 0.95);
+  --bg-card-border: rgba(233, 215, 147, 0.22);
+  --bg-surface-light: #fdfbf7;
+
+  /* Master Gold Gradients & Tones */
+  --gold-accent: #E9D793;
+  --gold-bright: #fff2b8;
+  --gold-metallic: linear-gradient(135deg, #f7ebb8 0%, #d4af37 50%, #aa771c 100%);
+  --gold-border: rgba(233, 215, 147, 0.45);
+  --gold-border-glow: rgba(233, 215, 147, 0.8);
+  --gold-muted: rgba(233, 215, 147, 0.2);
+
+  /* Typography */
+  --font-main: 'Prompt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: 'Cinzel', 'Prompt', serif;
+
+  /* Accents & Feedbacks */
+  --text-light: #f8f6f0;
+  --text-muted: #c9b9b0;
+  --text-dark: #120104;
+  --danger-color: #ff4d4f;
+  --success-color: #52c41a;
+  --warning-color: #faad14;
+
+  /* Elevations & Radii */
+  --shadow-gold: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(233, 215, 147, 0.08);
+  --shadow-gold-hover: 0 15px 35px rgba(0, 0, 0, 0.85), 0 0 25px rgba(233, 215, 147, 0.25);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --transition-fast: 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-dark);
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(94, 3, 15, 0.45) 0%, transparent 65%),
+    radial-gradient(circle at 100% 100%, rgba(59, 1, 9, 0.3) 0%, transparent 50%),
+    linear-gradient(180deg, #180105 0%, #0d0003 100%);
+  background-attachment: fixed;
+  color: var(--text-light);
+  font-family: var(--font-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-darker);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(233, 215, 147, 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-accent);
+}
+
+a {
+  color: var(--gold-accent);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+a:hover {
+  color: var(--gold-bright);
+}
+
+/* Layout Containers */
+.container {
+  width: 100%;
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.main_content {
+  flex: 1;
+  padding: 2.5rem 0 4rem;
+}
+
+/* Header & Royal Navbar */
+.site_header {
+  background: rgba(15, 1, 3, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--gold-muted);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
+  padding: 0.85rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.brand_logo {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+}
+
+.brand_emblem {
+  font-size: 2rem;
+  filter: drop-shadow(0 0 10px rgba(233, 215, 147, 0.5));
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+.brand_text_wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand_name {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background: var(--gold-metallic);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(233, 215, 147, 0.3);
+}
+
+.brand_tagline {
+  font-size: 0.65rem;
+  letter-spacing: 2.2px;
+  color: var(--gold-accent);
+  opacity: 0.8;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.nav_links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.nav_links a {
+  font-weight: 500;
+  font-size: 0.92rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-sm);
+  color: var(--text-light);
+  opacity: 0.9;
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+/* Top Navigation Active Indicator Bar */
+.nav_links a {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav_links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  height: 2px;
+  background: var(--gold-accent);
+  transition: all 0.25s ease-out;
+  transform: translateX(-50%);
+  box-shadow: 0 0 8px var(--gold-accent);
+}
+
+.nav_links a:hover::after,
+.nav_links a.active::after {
+  width: 80%;
+}
+
+/* Page Transition & Loading Bar */
+#page_progress_bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #d4af37, #fff2b8, #E9D793);
+  z-index: 99999;
+  box-shadow: 0 0 10px rgba(233, 215, 147, 0.8), 0 0 5px #fff;
+  transition: width 0.3s cubic-bezier(0.1, 0.9, 0.2, 1), opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.main_content {
+  animation: pageFadeIn 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.page_fade_exit {
+  animation: pageFadeOut 0.22s cubic-bezier(0.4, 0, 1, 1) forwards !important;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.995);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pageFadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.995);
+  }
+}
+
+/* Premium Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius-md);
+  font-family: var(--font-main);
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+  font-size: 0.92rem;
+  text-decoration: none;
+}
+
+.btn_gold {
+  background: var(--gold-metallic);
+  color: #1a0206;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  border: 1px solid rgba(255, 242, 184, 0.4);
+}
+
+.btn_gold:hover {
+  background: linear-gradient(135deg, #ffffff 0%, #f7ebb8 40%, #d4af37 100%);
+  color: #1a0206;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(212, 175, 55, 0.5);
+}
+
+.btn_outline {
+  background: rgba(233, 215, 147, 0.05);
+  color: var(--gold-accent);
+  border: 1px solid var(--gold-border);
+}
+
+.btn_outline:hover {
+  background: rgba(233, 215, 147, 0.15);
+  border-color: var(--gold-accent);
+  color: var(--gold-bright);
+  transform: translateY(-1px);
+}
+
+/* Form Controls */
+.form_control {
+  background: rgba(14, 1, 3, 0.85);
+  border: 1px solid rgba(233, 215, 147, 0.28);
+  color: var(--text-light);
+  border-radius: var(--radius-md);
+  padding: 0.7rem 0.95rem;
+  font-family: var(--font-main);
+  font-size: 0.92rem;
+  transition: all var(--transition-fast);
+  outline: none;
+}
+
+.form_control:focus {
+  border-color: var(--gold-accent);
+  box-shadow: 0 0 12px rgba(233, 215, 147, 0.35);
+  background: rgba(20, 2, 5, 0.95);
+}
+
+/* Hero Section */
+.hero_section {
+  text-align: center;
+  padding: 3rem 1.5rem 3.5rem;
+  position: relative;
+  margin-bottom: 2.5rem;
+  border-radius: var(--radius-xl);
+  background: radial-gradient(circle at 50% 30%, rgba(94, 3, 15, 0.7) 0%, rgba(20, 2, 5, 0.85) 100%);
+  border: 1px solid rgba(233, 215, 147, 0.25);
+  box-shadow: var(--shadow-gold);
+  overflow: hidden;
+}
+
+.hero_section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--gold-accent) 50%, transparent 100%);
+}
+
+.hero_badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(233, 215, 147, 0.1);
+  border: 1px solid rgba(233, 215, 147, 0.35);
+  color: var(--gold-bright);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  margin-bottom: 1.25rem;
+}
+
+.hero_title {
+  font-family: var(--font-heading);
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background: var(--gold-metallic);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.85rem;
+  line-height: 1.25;
+}
+
+.hero_subtitle {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: 680px;
+  margin: 0 auto 1.75rem;
+  font-weight: 300;
+}
+
+.hero_stats {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(233, 215, 147, 0.15);
+}
+
+.hero_stat_item strong {
+  display: block;
+  font-size: 1.5rem;
+  color: var(--gold-bright);
+  font-family: var(--font-heading);
+}
+
+.hero_stat_item span {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Filter Card Panel */
+.filter_panel {
+  background: rgba(26, 2, 6, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(233, 215, 147, 0.25);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.55);
+}
+
+.filter_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(233, 215, 147, 0.15);
+}
+
+/* Grid & Cards for Marketplace */
+.amulet_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.amulet_card {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--bg-card-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-gold);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-smooth);
+  position: relative;
+}
+
+.amulet_card:hover {
+  transform: translateY(-7px);
+  border-color: var(--gold-border-glow);
+  box-shadow: var(--shadow-gold-hover);
+  background: var(--bg-card-hover);
+}
+
+.amulet_card_media {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 50%, #2e0207 0%, #110003 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.amulet_card_media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.amulet_card:hover .amulet_card_media img {
+  transform: scale(1.06);
+}
+
+.amulet_cat_badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(14, 1, 3, 0.85);
+  backdrop-filter: blur(6px);
+  color: var(--gold-accent);
+  border: 1px solid rgba(233, 215, 147, 0.4);
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  z-index: 2;
+}
+
+.amulet_quick_wish {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(14, 1, 3, 0.85);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(233, 215, 147, 0.3);
+  color: var(--gold-accent);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+  z-index: 2;
+  transition: all var(--transition-fast);
+}
+
+.amulet_quick_wish:hover {
+  background: rgba(255, 77, 79, 0.25);
+  border-color: #ff4d4f;
+  transform: scale(1.1);
+}
+
+.amulet_card_body {
+  padding: 1.4rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.amulet_title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: var(--gold-bright);
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 0.65rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 3.2rem;
+}
+
+.amulet_specs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.amulet_spec_row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.amulet_spec_row strong {
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.amulet_footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(233, 215, 147, 0.15);
+}
+
+.amulet_price_tag {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--gold-accent);
+  text-shadow: 0 0 10px rgba(233, 215, 147, 0.3);
+}
+
+/* Radar Canvas Container in Detail */
+.radar_chart_container {
+  background: var(--bg-card);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: var(--shadow-gold);
+}
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.nav_links a {
+  font-weight: 600;
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+}
+
+.nav_links a:hover,
+.nav_links a.active {
+  border-color: var(--gold-accent);
+  background-color: rgba(233, 215, 147, 0.12);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.35rem;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid var(--gold-accent);
+  transition: all var(--transition-fast);
+  font-size: 0.95rem;
+}
+
+.btn_gold {
+  background-color: var(--gold-accent);
+  color: var(--text-dark);
+}
+
+.btn_gold:hover {
+  background-color: var(--gold-bright);
+  color: var(--text-dark);
+  transform: translateY(-1px);
+}
+
+.btn_outline {
+  background-color: transparent;
+  color: var(--gold-accent);
+}
+
+.btn_outline:hover {
+  background-color: var(--gold-accent);
+  color: var(--text-dark);
+}
+
+/* Grid & Cards for Marketplace and Auction */
+.amulet_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.amulet_card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-gold);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.amulet_card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold-accent);
+}
+
+.amulet_card_image {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  background-color: var(--bg-darker);
+  border-bottom: 1px solid var(--gold-muted);
+}
+
+.amulet_card_body {
+  padding: 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.amulet_title {
+  font-size: 1.15rem;
+  color: var(--text-light);
+  font-weight: 700;
+}
+
+.amulet_meta {
+  font-size: 0.9rem;
+  color: var(--gold-accent);
+  opacity: 0.9;
+}
+
+.amulet_price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--gold-accent);
+}
+
+/* Radar Chart Canvas Wrapper (Module 3) */
+.radar_chart_container {
+  background-color: var(--bg-dark);
+  border: 2px solid var(--gold-accent);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-gold);
+}
+
+.radar_canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Countdown Timer & Anti-Snipe Badge (Module 2) */
+.auction_timer {
+  background-color: var(--bg-darker);
+  border: 1px solid var(--gold-accent);
+  color: var(--text-light);
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.auction_timer.snipe_warning {
+  border-color: var(--danger-color);
+  color: var(--danger-color);
+}
+
+/* Forms & Filter Bar */
+.filter_bar {
+  background-color: var(--bg-card);
+  border: 1px solid var(--gold-border);
+  padding: 1.25rem;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.form_control {
+  padding: 0.65rem 0.9rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--gold-border);
+  background-color: var(--bg-darker);
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+.form_control:focus {
+  outline: none;
+  border-color: var(--gold-accent);
+}
+
+/* Tables (Bid History, Cart, Admin) */
+.data_table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--bg-card);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.data_table th,
+.data_table td {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--gold-muted);
+}
+
+.data_table th {
+  background-color: var(--bg-darker);
+  color: var(--gold-accent);
+  font-weight: 700;
+}
+
+.data_table td {
+  color: var(--text-light);
+}
+
+/* Footer */
+.site_footer {
+  background-color: var(--bg-darker);
+  border-top: 2px solid var(--gold-accent);
+  padding: 1.5rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--gold-accent);
+  margin-top: auto;
+}
+

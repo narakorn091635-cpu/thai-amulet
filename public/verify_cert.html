@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="x-correlation-id" content="req_01d70b01cd33">
+    <title>ระบบตรวจสอบใบเซอร์พระแท้ (QR Verification) | สยามพุทธคุณ (Siam Amulet &amp; Auction)</title>
+    <!-- Google Fonts: Prompt & Cinzel for Luxury Thai Amulet Aesthetics -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body data-relative-root=".">
+<header class="site_header">
+    <div class="container navbar">
+        <a href="./index.html" class="brand_logo">
+            <span class="brand_emblem">⚜️</span>
+            <div class="brand_text_wrap">
+                <span class="brand_name">สยามพุทธคุณ (Siam Amulet &amp; Auction)</span>
+                <span class="brand_tagline">SIAM SACRED AMULET & LIVE AUCTION</span>
+            </div>
+        </a>
+        <nav aria-label="Main Navigation">
+            <ul class="nav_links">
+                <li><a href="./index.html">ตลาดเช่าพระ</a></li>
+                <li><a href="./auctions.html">ประมูลพระ</a></li>
+                <li><a href="./leaderboard.html" style="color: var(--gold-bright);">🏆 ทำเนียบพระแชมป์</a></li>
+                <li><a href="./verify_cert.html">🛡️ ตรวจใบเซอร์</a></li>
+                                <li>
+                    <a href="./cart.php">
+                        ตะกร้าเช่าบูชา (<span id="nav_cart_count">0</span>)
+                    </a>
+                </li>
+                                                    <li><a href="./login.php" class="btn btn_outline">เข้าสู่ระบบ</a></li>
+                    <li><a href="./register.php" class="btn btn_gold">สมัครสมาชิก</a></li>
+                            </ul>
+        </nav>
+    </div>
+</header>
+<main class="main_content container">
+        
+<div style="max-width: 900px; margin: 0 auto; padding-bottom: 3rem;">
+    <!-- Search Bar by Certificate Number -->
+    <div style="background-color: var(--bg-card); border: 1px solid var(--gold-border); border-radius: var(--radius-lg); padding: 1.5rem; margin-bottom: 2rem;">
+        <h2 style="color: var(--gold-accent); font-size: 1.35rem; margin-bottom: 0.5rem; text-align: center;">
+            🛡️ ระบบตรวจสอบใบเซอร์พระแท้ & เกรดมาตรฐานสากล (Amulet Grading Verification)
+        </h2>
+        <p style="text-align: center; color: var(--text-light); opacity: 0.9; font-size: 0.9rem; margin-bottom: 1.25rem;">
+            ป้องกันการสวมรอยพระแท้ด้วยระบบ QR Code ประจำองค์ ตรวจสอบประวัติ เจ้าของปัจจุบัน และภาพซูมจุดตำหนิพิมพ์
+        </p>
+
+        <form method="GET" action="verify_cert.html" style="display: flex; gap: 0.5rem; max-width: 600px; margin: 0 auto;">
+            <input type="text" name="cert_no" required class="form_control" style="flex: 1;"
+                   placeholder="ระบุเลขที่ใบเซอร์ เช่น PSA-AMU-2026-0005"
+                   value="">
+            <button type="submit" class="btn btn_gold" style="white-space: nowrap;">🔍 ตรวจสอบพระแท้</button>
+        </form>
+    </div>
+
+    </div>
+
+</main>
+<footer class="site_footer">
+    <div class="container">
+        <p>&copy; 2026 สยามพุทธคุณ (Siam Amulet &amp; Auction) — ศูนย์รวมพระเครื่องยอดนิยมและประมูลพระเครื่องมาตรฐานสากล</p>
+    </div>
+</footer>
+<script src="./js/main.js"></script>
+</body>
+</html>
+        

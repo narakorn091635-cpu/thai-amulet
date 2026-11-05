@@ -1,0 +1,26 @@
+# Project Information — Thai Amulet E-commerce & Real-time Auction Platform
+
+## Overview
+- **Tech Stack**: HTML5, Custom CSS3 (No Tailwind, No Bootstrap), Vanilla JavaScript, PHP 8+ (Native/PDO), MySQL/SQLite dual resilience.
+- **Theme Colors**:
+  - `--bg-dark`: `#5e030f` (Primary Dark Red)
+  - `--gold-accent`: `#E9D793` (Primary Gold)
+  - `--text-light`: `#ffffff`
+  - `--text-dark`: `#333333`
+
+## File Structure
+- 2026-11-04: Phase 2 Authentication & Admin CMS (20 - 40%) Completed.
+  - `/register.php` — Standalone user registration page with password confirmation and validation.
+  - `/login.php` — User login page with `password_verify()` and explicit `$_SESSION['role']` storage.
+  - `/logout.php` — Session termination and cookie cleanup.
+  - `/shared/services/auth_guard.php` — Authorization middleware (`require_admin()`, `require_login()`).
+  - `/admin/index.php` — Admin CMS Dashboard with metric cards and `require_admin()` protection.
+  - `/admin/amulet_manage.php` — Amulet CRUD with image upload to `/images/uploads/`, 6 stat inputs (1-10), and real-time Radar Chart canvas preview.
+  - `/admin/order_manage.php` — Slip verification and order status management.
+  - `/admin/auction_manage.php` — Auction room setup and timer duration control.
+  - `/images/uploads/` — Uploaded amulet photos and bank slips.
+  - `/css/style.css` — Custom CSS3 stylesheet without frameworks.
+  - `/js/main.js` — Radar Chart engine & telemetry.
+  - `/js/auction.js` — Countdown timer & AJAX bidding with Anti-Snipe.
+  - `/TODOS.md` — Implementation tracking checklist.
+  - `/CHANGELOG.md` — Architecture thinking and mutation logs.

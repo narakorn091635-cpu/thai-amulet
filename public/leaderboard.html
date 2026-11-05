@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="x-correlation-id" content="req_0a15befb2eb0">
+    <title>ทำเนียบพระแชมป์ &amp; เซียนพระ (Leaderboard &amp; Hall of Fame) | สยามพุทธคุณ (Siam Amulet &amp; Auction)</title>
+    <!-- Google Fonts: Prompt & Cinzel for Luxury Thai Amulet Aesthetics -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body data-relative-root=".">
+<header class="site_header">
+    <div class="container navbar">
+        <a href="./index.html" class="brand_logo">
+            <span class="brand_emblem">⚜️</span>
+            <div class="brand_text_wrap">
+                <span class="brand_name">สยามพุทธคุณ (Siam Amulet &amp; Auction)</span>
+                <span class="brand_tagline">SIAM SACRED AMULET & LIVE AUCTION</span>
+            </div>
+        </a>
+        <nav aria-label="Main Navigation">
+            <ul class="nav_links">
+                <li><a href="./index.html">ตลาดเช่าพระ</a></li>
+                <li><a href="./auctions.html">ประมูลพระ</a></li>
+                <li><a href="./leaderboard.html" style="color: var(--gold-bright);">🏆 ทำเนียบพระแชมป์</a></li>
+                <li><a href="./verify_cert.html">🛡️ ตรวจใบเซอร์</a></li>
+                                <li>
+                    <a href="./cart.php">
+                        ตะกร้าเช่าบูชา (<span id="nav_cart_count">0</span>)
+                    </a>
+                </li>
+                                                    <li><a href="./login.php" class="btn btn_outline">เข้าสู่ระบบ</a></li>
+                    <li><a href="./register.php" class="btn btn_gold">สมัครสมาชิก</a></li>
+                            </ul>
+        </nav>
+    </div>
+</header>
+<main class="main_content container">
+        
+<div style="max-width: 1200px; margin: 0 auto; padding-bottom: 3rem;">
+    <!-- Title Banner -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+        <span style="font-size: 0.85rem; color: var(--gold-bright); font-weight: 700; letter-spacing: 2px; text-transform: uppercase;">
+            RANKING & HALL OF FAME
+        </span>
+        <h1 style="color: var(--gold-accent); margin-top: 0.35rem; font-size: 2.2rem;">
+            🏆 ทำเนียบพระแชมป์ & หอเกียรติยศเซียนพระ
+        </h1>
+        <p style="color: var(--text-light); opacity: 0.85; max-width: 650px; margin: 0.5rem auto 1.5rem auto;">
+            จัดอันดับสุดยอดพระเครื่องที่ผ่านการประเมินเกรด มูลค่าสูงสุด และทำเนียบนักสะสมพระเครื่องแถวหน้าของวงการ
+        </p>
+
+        <!-- Main Switcher Tabs -->
+        <div style="display: inline-flex; background: var(--bg-card); border: 1px solid var(--gold-border); border-radius: 999px; padding: 0.35rem; gap: 0.5rem;">
+            <a href="leaderboard.html?tab=amulets"
+               style="padding: 0.6rem 1.75rem; border-radius: 999px; font-weight: 700; font-size: 0.95rem; text-decoration: none; background: var(--gold-accent); color: #1a0003;">
+                ⚜️ จัดอันดับฝั่งองค์พระ (Amulets)
+            </a>
+            <a href="leaderboard.html?tab=collectors"
+               style="padding: 0.6rem 1.75rem; border-radius: 999px; font-weight: 700; font-size: 0.95rem; text-decoration: none; color: var(--text-light);">
+                👑 ทำเนียบเซียน & หอเกียรติยศ (Collectors)
+            </a>
+        </div>
+    </div>
+
+            <!-- ======================= AMULET LEADERBOARD ======================= -->
+
+        <!-- Section 1: Top Graded Masterpieces (ทำเนียบพระแชมป์เกรด PSA) -->
+        <div style="background: linear-gradient(180deg, #2a0006 0%, #1a0003 100%); border: 2px solid var(--gold-accent); border-radius: var(--radius-lg); padding: 1.5rem; margin-bottom: 2.5rem; box-shadow: var(--shadow-gold);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.5rem;">
+                <div>
+                    <h2 style="color: var(--gold-accent); font-size: 1.35rem; margin: 0;">
+                        🎖️ ทำเนียบพระแชมป์ (Top Graded Masterpieces)
+                    </h2>
+                    <p style="font-size: 0.85rem; color: var(--text-light); opacity: 0.8; margin-top: 0.2rem;">
+                        พระเครื่องที่ผ่านการรับรองและได้เกรดความสมบูรณ์สูงสุด (PSA 1-10) ชี้ขาดด้วยความหายาก
+                    </p>
+                </div>
+                <span style="font-size: 0.8rem; background: #000; color: #73d13d; border: 1px solid var(--success-color); padding: 0.25rem 0.75rem; border-radius: 999px; font-weight: 700;">
+                    ✓ CERTIFIED SLABS ONLY
+                </span>
+            </div>
+
+            <div class="amulet_grid">
+                                    <div class="amulet_card" style="border-color: var(--gold-accent);">
+                        <div style="position: relative; overflow: hidden; background: #1a0003; height: 180px;">
+                            <span style="position: absolute; top: 8px; left: 8px; background: #faad14; color: #000; font-weight: 900; font-size: 0.8rem; width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; border-radius: 50%; z-index: 2;">
+                                #1                            </span>
+
+                            <span style="position: absolute; top: 8px; right: 8px; background: #000; color: var(--gold-bright); border: 1px solid var(--gold-accent); font-weight: 800; font-size: 0.75rem; padding: 0.2rem 0.5rem; border-radius: 4px; z-index: 2;">
+                                GRADE 10.0                            </span>
+
+                            <img src="images/uploads/amulet_20261104_065714_e35cf5bf.jpeg"
+                                 alt="Amulet" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+
+                        <div class="amulet_card_body">
+                            <h3 class="amulet_title" style="font-size: 1rem;">เหนือเด้า</h3>
+                            <p class="amulet_meta" style="font-size: 0.8rem;">
+                                เกจิ: <strong>พระอาจารย์โชติ</strong>
+                            </p>
+                            <p class="amulet_meta" style="font-size: 0.8rem; color: #73d13d;">
+                                ผู้ครอบครอง: <strong>BaiNingNing (ผู้ครอบครองปัจจุบันที่ยืนยันตัวตนแล้ว)</strong>
+                            </p>
+                            <div style="margin-top: 0.75rem;">
+                                <a href="verify_cert.html?cert_no=PSA-AMU-2026-0005"
+                                   class="btn btn_gold" style="width: 100%; display: block; text-align: center; font-size: 0.8rem; padding: 0.4rem;">
+                                    ตรวจใบเซอร์ & ซูมตำหนิ ↗
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="amulet_card" style="border-color: var(--gold-muted);">
+                        <div style="position: relative; overflow: hidden; background: #1a0003; height: 180px;">
+                            <span style="position: absolute; top: 8px; left: 8px; background: #111; color: #fff; font-weight: 900; font-size: 0.8rem; width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; border-radius: 50%; z-index: 2;">
+                                #2                            </span>
+
+                            <span style="position: absolute; top: 8px; right: 8px; background: #000; color: var(--gold-bright); border: 1px solid var(--gold-accent); font-weight: 800; font-size: 0.75rem; padding: 0.2rem 0.5rem; border-radius: 4px; z-index: 2;">
+                                GRADE 9.5                            </span>
+
+                            <img src="images/sample_somdej.png"
+                                 alt="Amulet" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+
+                        <div class="amulet_card_body">
+                            <h3 class="amulet_title" style="font-size: 1rem;">พระสมเด็จวัดระฆัง พิมพ์ใหญ่ พิมพ์นิยม</h3>
+                            <p class="amulet_meta" style="font-size: 0.8rem;">
+                                เกจิ: <strong>สมเด็จพระพุฒาจารย์ (โต พรหมรังสี)</strong>
+                            </p>
+                            <p class="amulet_meta" style="font-size: 0.8rem; color: #73d13d;">
+                                ผู้ครอบครอง: <strong>สมชาย สายศรัทธา</strong>
+                            </p>
+                            <div style="margin-top: 0.75rem;">
+                                <a href="verify_cert.html?cert_no=PSA-AMU-2026-0001"
+                                   class="btn btn_gold" style="width: 100%; display: block; text-align: center; font-size: 0.8rem; padding: 0.4rem;">
+                                    ตรวจใบเซอร์ & ซูมตำหนิ ↗
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                            </div>
+        </div>
+
+        <!-- Section 2: Top Value & Most Bids (มูลค่าและสถิติประมูลสูงสุด) -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem;">
+            <!-- Top Value -->
+            <div style="background-color: var(--bg-card); border: 1px solid var(--gold-border); border-radius: var(--radius-lg); padding: 1.5rem;">
+                <h3 style="color: var(--gold-accent); font-size: 1.15rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                    💎 พระเครื่องมูลค่าสูงสุด (Top Market Value)
+                </h3>
+                <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                                            <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 0.8rem; background: var(--bg-darker); border-radius: var(--radius-md); border-left: 3px solid var(--gold-accent);">
+                            <div style="display: flex; align-items: center; gap: 0.6rem;">
+                                <span style="font-weight: 800; color: var(--gold-bright); font-size: 0.9rem;">#1</span>
+                                <div>
+                                    <a href="amulet_detail.php?id=1" style="font-weight: 700; font-size: 0.9rem; color: #fff;">
+                                        พระสมเด็จวัดระฆัง พิมพ์ใหญ่ พิมพ์นิยม                                    </a>
+                                    <div style="font-size: 0.75rem; color: var(--text-light); opacity: 0.7;">
+                                        วัด: วัดระฆังโฆสิตาราม                                    </div>
+                                </div>
+                            </div>
+                            <span style="font-weight: 800; color: var(--gold-accent); font-size: 1rem;">
+                                1,450,000.00 ฿
+                            </span>
+                        </div>
+                                            <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 0.8rem; background: var(--bg-darker); border-radius: var(--radius-md); border-left: 3px solid var(--gold-accent);">
+                            <div style="display: flex; align-items: center; gap: 0.6rem;">
+                                <span style="font-weight: 800; color: var(--gold-bright); font-size: 0.9rem;">#2</span>
+                                <div>
+                                    <a href="amulet_detail.php?id=5" style="font-weight: 700; font-size: 0.9rem; color: #fff;">
+                                        เหนือเด้า                                    </a>
+                                    <div style="font-size: 0.75rem; color: var(--text-light); opacity: 0.7;">
+                                        วัด: วัดพุทไธศวรรย์                                    </div>
+                                </div>
+                            </div>
+                            <span style="font-weight: 800; color: var(--gold-accent); font-size: 1rem;">
+                                950,000.00 ฿
+                            </span>
+                        </div>
+                                            <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 0.8rem; background: var(--bg-darker); border-radius: var(--radius-md); border-left: 3px solid var(--gold-accent);">
+                            <div style="display: flex; align-items: center; gap: 0.6rem;">
+                                <span style="font-weight: 800; color: var(--gold-bright); font-size: 0.9rem;">#3</span>
+                                <div>
+                                    <a href="amulet_detail.php?id=4" style="font-weight: 700; font-size: 0.9rem; color: #fff;">
+                                        เหรียญเปิดโลก หลวงปู่ดู่ วัดสะแก                                    </a>
+                                    <div style="font-size: 0.75rem; color: var(--text-light); opacity: 0.7;">
+                                        วัด: วัดสะแก                                    </div>
+                                </div>
+                            </div>
+                            <span style="font-weight: 800; color: var(--gold-accent); font-size: 1rem;">
+                                420,000.00 ฿
+                            </span>
+                        </div>
+                                            <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 0.8rem; background: var(--bg-darker); border-radius: var(--radius-md); border-left: 3px solid var(--gold-accent);">
+                            <div style="display: flex; align-items: center; gap: 0.6rem;">
+                                <span style="font-weight: 800; color: var(--gold-bright); font-size: 0.9rem;">#4</span>
+                                <div>
+                                    <a href="amulet_detail.php?id=2" style="font-weight: 700; font-size: 0.9rem; color: #fff;">
+                                        เหรียญเสมา หลวงพ่อรวย รุ่นรวยชนะจน                                    </a>
+                                    <div style="font-size: 0.75rem; color: var(--text-light); opacity: 0.7;">
+                                        วัด: วัดตะโก                                    </div>
+                                </div>
+                            </div>
+                            <span style="font-weight: 800; color: var(--gold-accent); font-size: 1rem;">
+                                42,000.00 ฿
+                            </span>
+                        </div>
+                                            <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 0.8rem; background: var(--bg-darker); border-radius: var(--radius-md); border-left: 3px solid var(--gold-accent);">
+                            <div style="display: flex; align-items: center; gap: 0.6rem;">
+                                <span style="font-weight: 800; color: var(--gold-bright); font-size: 0.9rem;">#5</span>
+                                <div>
+                                    <a href="amulet_detail.php?id=3" style="font-weight: 700; font-size: 0.9rem; color: #fff;">
+                                        เบี้ยแก้ ป้องกันคุณไสย ยาสั่ง                                    </a>
+                                    <div style="font-size: 0.75rem; color: var(--text-light); opacity: 0.7;">
+                                        วัด: วัดกลางบางแก้ว                                    </div>
+                                </div>
+                            </div>
+                            <span style="font-weight: 800; color: var(--gold-accent); font-size: 1rem;">
+                                32,000.00 ฿
+                            </span>
+                        </div>
+                                    </div>
+            </div>
+
+            <!-- Most Heated Bids -->
+            <div style="background-color: var(--bg-card); border: 1px solid var(--gold-border); border-radius: var(--radius-lg); padding: 1.5rem;">
+                <h3 style="color: var(--gold-accent); font-size: 1.15rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                    🔥 สู้ราคาประมูลดุเดือดที่สุด (Most Heated Bids)
+                </h3>
+                <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                                                                        <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 0.8rem; background: var(--bg-darker); border-radius: var(--radius-md); border-left: 3px solid #ff4d4f;">
+                                <div style="display: flex; align-items: center; gap: 0.6rem;">
+                                    <span style="font-weight: 800; color: #ff7875; font-size: 0.9rem;">#1</span>
+                                    <div>
+                                        <a href="auction_detail.php?id=2" style="font-weight: 700; font-size: 0.9rem; color: #fff;">
+                                            เหนือเด้า                                        </a>
+                                        <div style="font-size: 0.75rem; color: #ff7875;">
+                                            เคาะสู้ราคาไปแล้ว <strong>4</strong> ครั้ง
+                                        </div>
+                                    </div>
+                                </div>
+                                <span style="font-weight: 800; color: var(--gold-accent); font-size: 1rem;">
+                                    1,200,000.00 ฿
+                                </span>
+                            </div>
+                                                    <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 0.8rem; background: var(--bg-darker); border-radius: var(--radius-md); border-left: 3px solid #ff4d4f;">
+                                <div style="display: flex; align-items: center; gap: 0.6rem;">
+                                    <span style="font-weight: 800; color: #ff7875; font-size: 0.9rem;">#2</span>
+                                    <div>
+                                        <a href="auction_detail.php?id=1" style="font-weight: 700; font-size: 0.9rem; color: #fff;">
+                                            เหรียญเปิดโลก หลวงปู่ดู่ วัดสะแก                                        </a>
+                                        <div style="font-size: 0.75rem; color: #ff7875;">
+                                            เคาะสู้ราคาไปแล้ว <strong>0</strong> ครั้ง
+                                        </div>
+                                    </div>
+                                </div>
+                                <span style="font-weight: 800; color: var(--gold-accent); font-size: 1rem;">
+                                    450,000.00 ฿
+                                </span>
+                            </div>
+                                                            </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Top by Sacred Properties (ท็อปชาร์ตตามสายสรรพคุณ) -->
+        <div style="background-color: var(--bg-card); border: 1px solid var(--gold-border); border-radius: var(--radius-lg); padding: 1.5rem; margin-bottom: 2.5rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                    <h2 style="color: var(--gold-accent); font-size: 1.25rem; margin: 0;">
+                        ⚡ ท็อปชาร์ตตามสายสรรพคุณ (Top by Sacred Properties)
+                    </h2>
+                    <p style="font-size: 0.85rem; color: var(--text-light); opacity: 0.8; margin-top: 0.2rem;">
+                        แยกกระดานตามสายพลังพุทธคุณเฉพาะทางที่ผู้ศรัทธาแสวงหา
+                    </p>
+                </div>
+                <!-- Property Sub Tabs -->
+                <div style="display: flex; gap: 0.4rem;">
+                    <a href="leaderboard.html?tab=amulets&prop=wealth" class="btn btn_gold" style="font-size: 0.8rem; padding: 0.35rem 0.75rem;">
+                        💰 สายโชคลาภ
+                    </a>
+                    <a href="leaderboard.html?tab=amulets&prop=invulnerable" class="btn btn_outline" style="font-size: 0.8rem; padding: 0.35rem 0.75rem;">
+                        🛡️ สายคงกระพัน
+                    </a>
+                    <a href="leaderboard.html?tab=amulets&prop=kindness" class="btn btn_outline" style="font-size: 0.8rem; padding: 0.35rem 0.75rem;">
+                        🌸 สายเมตตามหานิยม
+                    </a>
+                </div>
+            </div>
+
+            <div class="amulet_grid">
+                                    <div class="amulet_card">
+                        <div style="height: 180px; overflow: hidden; background: #1a0003;">
+                            <img src="images/uploads/amulet_20261104_065714_e35cf5bf.jpeg"
+                                 alt="Amulet" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="amulet_card_body">
+                            <h3 class="amulet_title" style="font-size: 0.95rem;">เหนือเด้า</h3>
+                            <p class="amulet_meta" style="font-size: 0.8rem;">เกจิ: <strong>พระอาจารย์โชติ</strong></p>
+                            <div style="margin-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span class="amulet_price" style="font-size: 1.1rem;">1,000,000.00 ฿</span>
+                                <a href="amulet_detail.php?id=5" class="btn btn_outline" style="font-size: 0.75rem; padding: 0.3rem 0.6rem;">ดูสแตตัส</a>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="amulet_card">
+                        <div style="height: 180px; overflow: hidden; background: #1a0003;">
+                            <img src="images/sample_somdej.png"
+                                 alt="Amulet" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="amulet_card_body">
+                            <h3 class="amulet_title" style="font-size: 0.95rem;">พระสมเด็จวัดระฆัง พิมพ์ใหญ่ พิมพ์นิยม</h3>
+                            <p class="amulet_meta" style="font-size: 0.8rem;">เกจิ: <strong>สมเด็จพระพุฒาจารย์ (โต พรหมรังสี)</strong></p>
+                            <div style="margin-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span class="amulet_price" style="font-size: 1.1rem;">250,000.00 ฿</span>
+                                <a href="amulet_detail.php?id=1" class="btn btn_outline" style="font-size: 0.75rem; padding: 0.3rem 0.6rem;">ดูสแตตัส</a>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="amulet_card">
+                        <div style="height: 180px; overflow: hidden; background: #1a0003;">
+                            <img src="images/sample_ruay.png"
+                                 alt="Amulet" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="amulet_card_body">
+                            <h3 class="amulet_title" style="font-size: 0.95rem;">เหรียญเสมา หลวงพ่อรวย รุ่นรวยชนะจน</h3>
+                            <p class="amulet_meta" style="font-size: 0.8rem;">เกจิ: <strong>หลวงพ่อรวย ปาสาทิโก</strong></p>
+                            <div style="margin-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span class="amulet_price" style="font-size: 1.1rem;">45,000.00 ฿</span>
+                                <a href="amulet_detail.php?id=2" class="btn btn_outline" style="font-size: 0.75rem; padding: 0.3rem 0.6rem;">ดูสแตตัส</a>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="amulet_card">
+                        <div style="height: 180px; overflow: hidden; background: #1a0003;">
+                            <img src="images/sample_perdlok.png"
+                                 alt="Amulet" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="amulet_card_body">
+                            <h3 class="amulet_title" style="font-size: 0.95rem;">เหรียญเปิดโลก หลวงปู่ดู่ วัดสะแก</h3>
+                            <p class="amulet_meta" style="font-size: 0.8rem;">เกจิ: <strong>หลวงปู่ดู่ พรหมปัญโญ</strong></p>
+                            <div style="margin-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span class="amulet_price" style="font-size: 1.1rem;">12,000.00 ฿</span>
+                                <a href="amulet_detail.php?id=4" class="btn btn_outline" style="font-size: 0.75rem; padding: 0.3rem 0.6rem;">ดูสแตตัส</a>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="amulet_card">
+                        <div style="height: 180px; overflow: hidden; background: #1a0003;">
+                            <img src="images/sample_biagae.png"
+                                 alt="Amulet" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="amulet_card_body">
+                            <h3 class="amulet_title" style="font-size: 0.95rem;">เบี้ยแก้ ป้องกันคุณไสย ยาสั่ง</h3>
+                            <p class="amulet_meta" style="font-size: 0.8rem;">เกจิ: <strong>หลวงปู่บุญ ขนฺธโชติ</strong></p>
+                            <div style="margin-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span class="amulet_price" style="font-size: 1.1rem;">35,000.00 ฿</span>
+                                <a href="amulet_detail.php?id=3" class="btn btn_outline" style="font-size: 0.75rem; padding: 0.3rem 0.6rem;">ดูสแตตัส</a>
+                            </div>
+                        </div>
+                    </div>
+                            </div>
+        </div>
+
+        <!-- Section 4: Trending Amulets (พระยอดฮิตมาแรง) -->
+        <div style="background-color: var(--bg-card); border: 1px solid var(--gold-border); border-radius: var(--radius-lg); padding: 1.5rem;">
+            <h2 style="color: var(--gold-accent); font-size: 1.25rem; margin-bottom: 0.35rem;">
+                🚀 พระยอดฮิตมาแรง (Trending Amulets)
+            </h2>
+            <p style="font-size: 0.85rem; color: var(--text-light); opacity: 0.8; margin-bottom: 1.25rem;">
+                คำนวณจากสถิติยอดผู้เข้าชมจริงและจำนวนผู้กดบันทึกเข้า Wishlist
+            </p>
+
+            <div class="amulet_grid">
+                                    <div class="amulet_card">
+                        <div style="height: 180px; overflow: hidden; background: #1a0003;">
+                            <img src="images/uploads/amulet_20261104_065714_e35cf5bf.jpeg"
+                                 alt="Amulet" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="amulet_card_body">
+                            <h3 class="amulet_title" style="font-size: 0.95rem;">เหนือเด้า</h3>
+                            <div style="display: flex; gap: 0.5rem; font-size: 0.75rem; color: var(--gold-bright); margin-top: 0.25rem;">
+                                <span>👁️ 4,650 วิว</span>
+                                <span>❤️ 380 บุ๊กมาร์ก</span>
+                            </div>
+                            <div style="margin-top: 0.75rem;">
+                                <a href="amulet_detail.php?id=5" class="btn btn_gold" style="width: 100%; display: block; text-align: center; font-size: 0.8rem; padding: 0.35rem;">
+                                    เข้าชมองค์นี้
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="amulet_card">
+                        <div style="height: 180px; overflow: hidden; background: #1a0003;">
+                            <img src="images/sample_perdlok.png"
+                                 alt="Amulet" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="amulet_card_body">
+                            <h3 class="amulet_title" style="font-size: 0.95rem;">เหรียญเปิดโลก หลวงปู่ดู่ วัดสะแก</h3>
+                            <div style="display: flex; gap: 0.5rem; font-size: 0.75rem; color: var(--gold-bright); margin-top: 0.25rem;">
+                                <span>👁️ 3,200 วิว</span>
+                                <span>❤️ 210 บุ๊กมาร์ก</span>
+                            </div>
+                            <div style="margin-top: 0.75rem;">
+                                <a href="amulet_detail.php?id=4" class="btn btn_gold" style="width: 100%; display: block; text-align: center; font-size: 0.8rem; padding: 0.35rem;">
+                                    เข้าชมองค์นี้
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="amulet_card">
+                        <div style="height: 180px; overflow: hidden; background: #1a0003;">
+                            <img src="images/sample_ruay.png"
+                                 alt="Amulet" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="amulet_card_body">
+                            <h3 class="amulet_title" style="font-size: 0.95rem;">เหรียญเสมา หลวงพ่อรวย รุ่นรวยชนะจน</h3>
+                            <div style="display: flex; gap: 0.5rem; font-size: 0.75rem; color: var(--gold-bright); margin-top: 0.25rem;">
+                                <span>👁️ 2,150 วิว</span>
+                                <span>❤️ 140 บุ๊กมาร์ก</span>
+                            </div>
+                            <div style="margin-top: 0.75rem;">
+                                <a href="amulet_detail.php?id=2" class="btn btn_gold" style="width: 100%; display: block; text-align: center; font-size: 0.8rem; padding: 0.35rem;">
+                                    เข้าชมองค์นี้
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="amulet_card">
+                        <div style="height: 180px; overflow: hidden; background: #1a0003;">
+                            <img src="images/sample_somdej.png"
+                                 alt="Amulet" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="amulet_card_body">
+                            <h3 class="amulet_title" style="font-size: 0.95rem;">พระสมเด็จวัดระฆัง พิมพ์ใหญ่ พิมพ์นิยม</h3>
+                            <div style="display: flex; gap: 0.5rem; font-size: 0.75rem; color: var(--gold-bright); margin-top: 0.25rem;">
+                                <span>👁️ 1,420 วิว</span>
+                                <span>❤️ 85 บุ๊กมาร์ก</span>
+                            </div>
+                            <div style="margin-top: 0.75rem;">
+                                <a href="amulet_detail.php?id=1" class="btn btn_gold" style="width: 100%; display: block; text-align: center; font-size: 0.8rem; padding: 0.35rem;">
+                                    เข้าชมองค์นี้
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="amulet_card">
+                        <div style="height: 180px; overflow: hidden; background: #1a0003;">
+                            <img src="images/sample_biagae.png"
+                                 alt="Amulet" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="amulet_card_body">
+                            <h3 class="amulet_title" style="font-size: 0.95rem;">เบี้ยแก้ ป้องกันคุณไสย ยาสั่ง</h3>
+                            <div style="display: flex; gap: 0.5rem; font-size: 0.75rem; color: var(--gold-bright); margin-top: 0.25rem;">
+                                <span>👁️ 980 วิว</span>
+                                <span>❤️ 53 บุ๊กมาร์ก</span>
+                            </div>
+                            <div style="margin-top: 0.75rem;">
+                                <a href="amulet_detail.php?id=3" class="btn btn_gold" style="width: 100%; display: block; text-align: center; font-size: 0.8rem; padding: 0.35rem;">
+                                    เข้าชมองค์นี้
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                            </div>
+        </div>
+
+    </div>
+
+</main>
+<footer class="site_footer">
+    <div class="container">
+        <p>&copy; 2026 สยามพุทธคุณ (Siam Amulet &amp; Auction) — ศูนย์รวมพระเครื่องยอดนิยมและประมูลพระเครื่องมาตรฐานสากล</p>
+    </div>
+</footer>
+<script src="./js/main.js"></script>
+</body>
+</html>
+        

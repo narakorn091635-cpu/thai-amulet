@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="x-correlation-id" content="req_b3e3654873a2">
+    <title>ศูนย์รวมพระเครื่องยอดนิยม (Amulet Marketplace) | สยามพุทธคุณ (Siam Amulet &amp; Auction)</title>
+    <!-- Google Fonts: Prompt & Cinzel for Luxury Thai Amulet Aesthetics -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body data-relative-root=".">
+<header class="site_header">
+    <div class="container navbar">
+        <a href="./index.html" class="brand_logo">
+            <span class="brand_emblem">⚜️</span>
+            <div class="brand_text_wrap">
+                <span class="brand_name">สยามพุทธคุณ (Siam Amulet &amp; Auction)</span>
+                <span class="brand_tagline">SIAM SACRED AMULET & LIVE AUCTION</span>
+            </div>
+        </a>
+        <nav aria-label="Main Navigation">
+            <ul class="nav_links">
+                <li><a href="./index.html">ตลาดเช่าพระ</a></li>
+                <li><a href="./auctions.html">ประมูลพระ</a></li>
+                <li><a href="./leaderboard.html" style="color: var(--gold-bright);">🏆 ทำเนียบพระแชมป์</a></li>
+                <li><a href="./verify_cert.html">🛡️ ตรวจใบเซอร์</a></li>
+                                <li>
+                    <a href="./cart.php">
+                        ตะกร้าเช่าบูชา (<span id="nav_cart_count">0</span>)
+                    </a>
+                </li>
+                                                    <li><a href="./login.php" class="btn btn_outline">เข้าสู่ระบบ</a></li>
+                    <li><a href="./register.php" class="btn btn_gold">สมัครสมาชิก</a></li>
+                            </ul>
+        </nav>
+    </div>
+</header>
+<main class="main_content container">
+        
+<!-- Luxury Hero Showcase Section -->
+<section class="hero_section">
+    <div class="hero_badge">
+        <span>✨</span> Siam Authentic Sacred Collection <span>✨</span>
+    </div>
+    <h1 class="hero_title">ศูนย์รวมพระเครื่องและวัตถุมงคลยอดนิยม</h1>
+    <p class="hero_subtitle">
+        เช่าบูชาพระแท้มาตรฐานสากล ตรวจสอบประวัติได้ด้วยระบบสแกน PSA Certificate พร้อมรับประกันความแท้ตลอดชีพ
+    </p>
+
+    <div class="hero_stats">
+        <div class="hero_stat_item">
+            <strong>100%</strong>
+            <span>รับประกันพระแท้</span>
+        </div>
+        <div class="hero_stat_item">
+            <strong>PSA GRADE</strong>
+            <span>มาตรฐานสากล</span>
+        </div>
+        <div class="hero_stat_item">
+            <strong>LIVE</strong>
+            <span>ประมูลเรียลไทม์</span>
+        </div>
+        <div class="hero_stat_item">
+            <strong>PROVENANCE</strong>
+            <span>โอนกรรมสิทธิ์ทันที</span>
+        </div>
+    </div>
+</section>
+
+<!-- Deep Multi-Faceted Filter Bar -->
+<form method="GET" action="index.html" class="filter_panel">
+    <div class="filter_header">
+        <div style="display: flex; align-items: center; gap: 0.6rem;">
+            <span style="font-size: 1.25rem;">🔍</span>
+            <span style="font-weight: 700; color: var(--gold-accent); font-size: 1.05rem; letter-spacing: 0.5px;">
+                ระบบค้นหา & คัดกรองสเปกพระเครื่องเชิงลึก
+            </span>
+        </div>
+            </div>
+
+    <!-- Row 1: Keyword, Category, Material -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-bottom: 1.25rem;">
+        <div>
+            <label for="keyword" style="display: block; font-size: 0.85rem; margin-bottom: 0.45rem; color: var(--gold-accent); font-weight: 500;">คำค้นหาทั่วไป (ชื่อพระ, วัด, เกจิ)</label>
+            <input type="text" id="keyword" name="keyword" class="form_control" style="width: 100%;"
+                   placeholder="เช่น หลวงพ่อรวย, พระสมเด็จ..."
+                   value="">
+        </div>
+
+        <div>
+            <label for="category_id" style="display: block; font-size: 0.85rem; margin-bottom: 0.45rem; color: var(--gold-accent); font-weight: 500;">หมวดหมู่พระเครื่อง</label>
+            <select id="category_id" name="category_id" class="form_control" style="width: 100%;">
+                <option value="">-- ทั้งหมดทุกหมวดหมู่ --</option>
+                                    <option value="1" >
+                        พระสมเด็จ (Phra Somdej)                    </option>
+                                    <option value="2" >
+                        พระเหรียญ (Monk Coins)                    </option>
+                                    <option value="3" >
+                        เครื่องรางของขลัง (Sacred Talismans)                    </option>
+                            </select>
+        </div>
+
+        <div>
+            <label for="material_type" style="display: block; font-size: 0.85rem; margin-bottom: 0.45rem; color: var(--gold-accent); font-weight: 500;">เนื้อพระ (สเปกวัสดุมวลสาร)</label>
+            <select id="material_type" name="material_type" class="form_control" style="width: 100%;">
+                <option value="">-- ทุกประเภทเนื้อพระ --</option>
+                <option value="powder" >เนื้อผง / พุทธคุณ / เกสร</option>
+                <option value="clay" >เนื้อดิน / ดินเผาโบราณ</option>
+                <option value="chin" >เนื้อชิน / ชินเงิน / ชินเขียว</option>
+                <option value="metal" >เนื้อโลหะ / ทองแดง / กะไหล่ทอง / นวโลหะ</option>
+                <option value="other" >เครื่องราง / เชือกถัก / อื่นๆ</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Row 2: Monk Name, Province, Edition -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin-bottom: 1.5rem;">
+        <div>
+            <label for="monk_name" style="display: block; font-size: 0.85rem; margin-bottom: 0.45rem; color: var(--gold-accent); font-weight: 500;">เกจิอาจารย์</label>
+            <input type="text" id="monk_name" name="monk_name" class="form_control" style="width: 100%;"
+                   placeholder="เช่น หลวงปู่ดู่, หลวงพ่อกลั่น, หลวงปู่บุญ"
+                   value="">
+        </div>
+
+        <div>
+            <label for="province" style="display: block; font-size: 0.85rem; margin-bottom: 0.45rem; color: var(--gold-accent); font-weight: 500;">จังหวัดที่ตั้งวัด</label>
+            <input type="text" id="province" name="province" class="form_control" style="width: 100%;"
+                   placeholder="เช่น กรุงเทพมหานคร, พระนครศรีอยุธยา"
+                   value="">
+        </div>
+
+        <div>
+            <label for="model_edition" style="display: block; font-size: 0.85rem; margin-bottom: 0.45rem; color: var(--gold-accent); font-weight: 500;">รุ่น / พิมพ์ทรงเจาะจง</label>
+            <input type="text" id="model_edition" name="model_edition" class="form_control" style="width: 100%;"
+                   placeholder="เช่น พิมพ์ใหญ่, รุ่นแรก, เปิดโลก"
+                   value="">
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+        <button type="submit" class="btn btn_gold" style="padding: 0.7rem 2.2rem;">
+            🔍 กรองค้นหาสเปกพระเครื่อง
+        </button>
+    </div>
+</form>
+
+<!-- Amulet Catalog Grid -->
+    <div class="amulet_grid">
+                                <div class="amulet_card">
+                <div class="amulet_card_media">
+                    <span class="amulet_cat_badge">
+                        พระเหรียญ (Monk Coins)                    </span>
+
+                    <button type="button" class="amulet_quick_wish" 
+                            title="บันทึกเป็นพระที่ชอบ"
+                            onclick="handleQuickWishlist(event, 5, this)">
+                        🤍                    </button>
+
+                                            <img src="images/uploads/amulet_20261104_065714_e35cf5bf.jpeg"
+                             alt="เหนือเด้า"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display: none; height: 100%; width: 100%; align-items: center; justify-content: center; font-size: 4rem; color: var(--gold-accent);">
+                            ⚜️
+                        </div>
+                                    </div>
+
+                <div class="amulet_card_body">
+                    <div>
+                        <h3 class="amulet_title" title="เหนือเด้า">
+                            เหนือเด้า                        </h3>
+                        <div class="amulet_specs">
+                            <div class="amulet_spec_row">
+                                <span>🏛️</span>
+                                <div>วัด: <strong>วัดพุทไธศวรรย์</strong></div>
+                            </div>
+                            <div class="amulet_spec_row">
+                                <span>🙏</span>
+                                <div>เกจิ: <strong>พระอาจารย์โชติ</strong></div>
+                            </div>
+                            <div class="amulet_spec_row">
+                                <span>🏷️</span>
+                                <div>พิมพ์: <strong>เหนือเกล้า องค์บูชาครู</strong> (จ.พระนครศรีอยุธยา)</div>
+                            </div>
+                            <div class="amulet_spec_row">
+                                <span>⏳</span>
+                                <div>ปีสร้าง: <strong>2569</strong></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="amulet_footer">
+                        <div>
+                            <span style="font-size: 0.75rem; color: var(--text-muted); display: block; text-transform: uppercase; letter-spacing: 0.5px;">ราคาเช่าบูชา</span>
+                            <span class="amulet_price_tag">1,000,000.00 ฿</span>
+                        </div>
+                        <div style="display: flex; gap: 0.45rem;">
+                            <a href="amulet_detail.php?id=5" class="btn btn_outline" style="padding: 0.45rem 0.75rem; font-size: 0.82rem;">
+                                สแตตัส 📊
+                            </a>
+                            <form method="POST" action="cart.php" style="margin: 0;">
+                                <input type="hidden" name="action" value="add">
+                                <input type="hidden" name="amulet_id" value="5">
+                                <button type="submit" class="btn btn_gold" style="padding: 0.45rem 0.85rem; font-size: 0.82rem;">
+                                    + บูชา
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                                <div class="amulet_card">
+                <div class="amulet_card_media">
+                    <span class="amulet_cat_badge">
+                        เครื่องรางของขลัง (Sacred Talismans)                    </span>
+
+                    <button type="button" class="amulet_quick_wish" 
+                            title="บันทึกเป็นพระที่ชอบ"
+                            onclick="handleQuickWishlist(event, 3, this)">
+                        🤍                    </button>
+
+                                            <img src="images/sample_biagae.png"
+                             alt="เบี้ยแก้ ป้องกันคุณไสย ยาสั่ง"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display: none; height: 100%; width: 100%; align-items: center; justify-content: center; font-size: 4rem; color: var(--gold-accent);">
+                            ⚜️
+                        </div>
+                                    </div>
+
+                <div class="amulet_card_body">
+                    <div>
+                        <h3 class="amulet_title" title="เบี้ยแก้ ป้องกันคุณไสย ยาสั่ง">
+                            เบี้ยแก้ ป้องกันคุณไสย ยาสั่ง                        </h3>
+                        <div class="amulet_specs">
+                            <div class="amulet_spec_row">
+                                <span>🏛️</span>
+                                <div>วัด: <strong>วัดกลางบางแก้ว</strong></div>
+                            </div>
+                            <div class="amulet_spec_row">
+                                <span>🙏</span>
+                                <div>เกจิ: <strong>หลวงปู่บุญ ขนฺธโชติ</strong></div>
+                            </div>
+                            <div class="amulet_spec_row">
+                                <span>🏷️</span>
+                                <div>พิมพ์: <strong>รุ่นสร้างศาลาการเปรียญ</strong> (จ.กรุงเทพมหานคร)</div>
+                            </div>
+                            <div class="amulet_spec_row">
+                                <span>⏳</span>
+                                <div>ปีสร้าง: <strong>2460</strong></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="amulet_footer">
+                        <div>
+                            <span style="font-size: 0.75rem; color: var(--text-muted); display: block; text-transform: uppercase; letter-spacing: 0.5px;">ราคาเช่าบูชา</span>
+                            <span class="amulet_price_tag">35,000.00 ฿</span>
+                        </div>
+                        <div style="display: flex; gap: 0.45rem;">
+                            <a href="amulet_detail.php?id=3" class="btn btn_outline" style="padding: 0.45rem 0.75rem; font-size: 0.82rem;">
+                                สแตตัส 📊
+                            </a>
+                            <form method="POST" action="cart.php" style="margin: 0;">
+                                <input type="hidden" name="action" value="add">
+                                <input type="hidden" name="amulet_id" value="3">
+                                <button type="submit" class="btn btn_gold" style="padding: 0.45rem 0.85rem; font-size: 0.82rem;">
+                                    + บูชา
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                                <div class="amulet_card">
+                <div class="amulet_card_media">
+                    <span class="amulet_cat_badge">
+                        พระเหรียญ (Monk Coins)                    </span>
+
+                    <button type="button" class="amulet_quick_wish" 
+                            title="บันทึกเป็นพระที่ชอบ"
+                            onclick="handleQuickWishlist(event, 2, this)">
+                        🤍                    </button>
+
+                                            <img src="images/sample_ruay.png"
+                             alt="เหรียญเสมา หลวงพ่อรวย รุ่นรวยชนะจน"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display: none; height: 100%; width: 100%; align-items: center; justify-content: center; font-size: 4rem; color: var(--gold-accent);">
+                            ⚜️
+                        </div>
+                                    </div>
+
+                <div class="amulet_card_body">
+                    <div>
+                        <h3 class="amulet_title" title="เหรียญเสมา หลวงพ่อรวย รุ่นรวยชนะจน">
+                            เหรียญเสมา หลวงพ่อรวย รุ่นรวยชนะจน                        </h3>
+                        <div class="amulet_specs">
+                            <div class="amulet_spec_row">
+                                <span>🏛️</span>
+                                <div>วัด: <strong>วัดตะโก</strong></div>
+                            </div>
+                            <div class="amulet_spec_row">
+                                <span>🙏</span>
+                                <div>เกจิ: <strong>หลวงพ่อรวย ปาสาทิโก</strong></div>
+                            </div>
+                            <div class="amulet_spec_row">
+                                <span>🏷️</span>
+                                <div>พิมพ์: <strong>รวยชนะจน บล็อกทองคำ</strong> (จ.พระนครศรีอยุธยา)</div>
+                            </div>
+                            <div class="amulet_spec_row">
+                                <span>⏳</span>
+                                <div>ปีสร้าง: <strong>2556</strong></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="amulet_footer">
+                        <div>
+                            <span style="font-size: 0.75rem; color: var(--text-muted); display: block; text-transform: uppercase; letter-spacing: 0.5px;">ราคาเช่าบูชา</span>
+                            <span class="amulet_price_tag">45,000.00 ฿</span>
+                        </div>
+                        <div style="display: flex; gap: 0.45rem;">
+                            <a href="amulet_detail.php?id=2" class="btn btn_outline" style="padding: 0.45rem 0.75rem; font-size: 0.82rem;">
+                                สแตตัส 📊
+                            </a>
+                            <form method="POST" action="cart.php" style="margin: 0;">
+                                <input type="hidden" name="action" value="add">
+                                <input type="hidden" name="amulet_id" value="2">
+                                <button type="submit" class="btn btn_gold" style="padding: 0.45rem 0.85rem; font-size: 0.82rem;">
+                                    + บูชา
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                                <div class="amulet_card">
+                <div class="amulet_card_media">
+                    <span class="amulet_cat_badge">
+                        พระสมเด็จ (Phra Somdej)                    </span>
+
+                    <button type="button" class="amulet_quick_wish" 
+                            title="บันทึกเป็นพระที่ชอบ"
+                            onclick="handleQuickWishlist(event, 1, this)">
+                        🤍                    </button>
+
+                                            <img src="images/sample_somdej.png"
+                             alt="พระสมเด็จวัดระฆัง พิมพ์ใหญ่ พิมพ์นิยม"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display: none; height: 100%; width: 100%; align-items: center; justify-content: center; font-size: 4rem; color: var(--gold-accent);">
+                            ⚜️
+                        </div>
+                                    </div>
+
+                <div class="amulet_card_body">
+                    <div>
+                        <h3 class="amulet_title" title="พระสมเด็จวัดระฆัง พิมพ์ใหญ่ พิมพ์นิยม">
+                            พระสมเด็จวัดระฆัง พิมพ์ใหญ่ พิมพ์นิยม                        </h3>
+                        <div class="amulet_specs">
+                            <div class="amulet_spec_row">
+                                <span>🏛️</span>
+                                <div>วัด: <strong>วัดระฆังโฆสิตาราม</strong></div>
+                            </div>
+                            <div class="amulet_spec_row">
+                                <span>🙏</span>
+                                <div>เกจิ: <strong>สมเด็จพระพุฒาจารย์ (โต พรหมรังสี)</strong></div>
+                            </div>
+                            <div class="amulet_spec_row">
+                                <span>🏷️</span>
+                                <div>พิมพ์: <strong>พิมพ์ใหญ่ เกศทะลุซุ้ม</strong> (จ.กรุงเทพมหานคร)</div>
+                            </div>
+                            <div class="amulet_spec_row">
+                                <span>⏳</span>
+                                <div>ปีสร้าง: <strong>2410</strong></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="amulet_footer">
+                        <div>
+                            <span style="font-size: 0.75rem; color: var(--text-muted); display: block; text-transform: uppercase; letter-spacing: 0.5px;">ราคาเช่าบูชา</span>
+                            <span class="amulet_price_tag">250,000.00 ฿</span>
+                        </div>
+                        <div style="display: flex; gap: 0.45rem;">
+                            <a href="amulet_detail.php?id=1" class="btn btn_outline" style="padding: 0.45rem 0.75rem; font-size: 0.82rem;">
+                                สแตตัส 📊
+                            </a>
+                            <form method="POST" action="cart.php" style="margin: 0;">
+                                <input type="hidden" name="action" value="add">
+                                <input type="hidden" name="amulet_id" value="1">
+                                <button type="submit" class="btn btn_gold" style="padding: 0.45rem 0.85rem; font-size: 0.82rem;">
+                                    + บูชา
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+<script>
+/**
+ * Handle quick toggle wishlist on card button.
+ */
+function handleQuickWishlist(event, amuletId, btnElem) {
+    event.stopPropagation();
+    event.preventDefault();
+
+    fetch('api_wishlist.html', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams({
+            action: 'toggle_wishlist',
+            amulet_id: amuletId
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (!data.success) {
+            if (data.message && data.message.includes('เข้าสู่ระบบ')) {
+                if (confirm('กรุณาเข้าสู่ระบบก่อนบันทึกรายการที่ชอบ\nคุณต้องการไปหน้าเข้าสู่ระบบหรือไม่?')) {
+                    window.location.href = 'login.php';
+                }
+                return;
+            }
+            alert(data.message || 'เกิดข้อผิดพลาด');
+            return;
+        }
+
+        if (data.is_in_wishlist) {
+            btnElem.textContent = '❤️';
+            btnElem.style.borderColor = '#ff4d4f';
+            btnElem.style.background = 'rgba(255, 77, 79, 0.25)';
+        } else {
+            btnElem.textContent = '🤍';
+            btnElem.style.borderColor = 'rgba(233, 215, 147, 0.3)';
+            btnElem.style.background = 'rgba(14, 1, 3, 0.85)';
+        }
+    })
+    .catch(err => {
+        console.error('Error toggling wishlist:', err);
+    });
+}
+</script>
+
