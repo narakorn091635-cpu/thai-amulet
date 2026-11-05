@@ -11,6 +11,7 @@ declare(strict_types=1);
 require_once __DIR__ . '/../shared/utils/session_init.php';
 require_once __DIR__ . '/../apps/config/app_config.php';
 require_once __DIR__ . '/../shared/services/auth_guard.php';
+require_once __DIR__ . '/footer.php';
 
 if (!function_exists('render_site_header')) {
     /**
