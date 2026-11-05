@@ -2,6 +2,33 @@
 
 All notable changes, architectural decisions, thinking logic, planning, tracking, and issue resolutions for the **Thai Amulet E-commerce & Real-time Auction Platform** are documented in this file.
 
+## [1.6.0] - 2026-11-05
+### Bugfix: Sync Full Certificates Schema & Hall of Fame Data for SQLite on Render
+- **Root Cause Analysis**:
+  - The SQLite database used on Render was created with a minimalist `certificates` schema missing `grade_label`, `issuer_org`, and `status`.
+  - When accessing `leaderboard.php`, `get_top_graded_masterpieces()` executed `SELECT c.grade_label ... WHERE c.status = 'active'`, causing `SQLSTATE[HY000]: General error: 1 no such column: c.grade_label`.
+- **Resolution**:
+  - Rebuilt SQLite `certificates` schema with 100% field parity to MySQL.
+  - Rebuilt and populated `user_trader_stats` with reputation points, deal counts, and Hall of Fame honorific titles.
+  - Pushed update to GitHub `main` branch for automatic live rollout on Render.
+
+## [1.5.9] - 2026-11-05
+### Bugfix: Sync SQLite Schema for Render Production Deployment
+- **Root Cause Analysis**:
+  - On the local development environment, new tables (`notifications`, `amulet_wishlists`, `user_followed_monks`, `certificates`, `provenance_transfers`) were migrated into MySQL `127.0.0.1:3306`.
+  - On Render Cloud, the Docker environment falls back automatically to SQLite (`database/thai_amulet_db.sqlite`) which was missing the newly added `notifications` table, triggering: `SQLSTATE[HY000]: General error: 1 no such table: notifications`.
+- **Resolution**:
+  - Migrated and structured all newly added tables directly into `database/thai_amulet_db.sqlite`.
+  - Committed and pushed changes to GitHub `main` branch to trigger Render automated redeployment.
+
+## [1.5.8] - 2026-11-05
+### Successful Production Deployment to Render Cloud
+- **Production URL**: `https://thai-amulet.onrender.com`
+- **Deployment Architecture**:
+  - Containerized with Docker on Debian Linux with PHP 8.2 Apache runtime, mod_rewrite, and GD extensions.
+  - Linked to GitHub repository `narakorn091635-cpu/thai-amulet`.
+  - HTTP/2 200 OK verified globally via Cloudflare CDN edge servers.
+
 ## [1.5.7] - 2026-11-05
 ### Instant Zero-Login Public Live Cloud Tunnel
 - **Architecture & Thinking Logic**:
