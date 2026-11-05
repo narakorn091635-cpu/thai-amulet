@@ -54,8 +54,11 @@ render_site_header("กรุพระส่วนตัว & พอร์ตโ
                 รวบรวมของสะสมล้ำค่า คำนวณมูลค่ารวมของพอร์ตโฟลิโอขยับตามราคาตลาดจริงแบบเรียลไทม์
             </p>
         </div>
-        <div>
-            <button onclick="document.getElementById('add_collection_modal').style.display='flex';" class="btn btn_gold" style="padding: 0.65rem 1.25rem;">
+        <div style="display: flex; gap: 0.65rem; align-items: center; flex-wrap: wrap;">
+            <a href="member_add_amulet.php" class="btn btn_gold" style="padding: 0.65rem 1.25rem;">
+                + ลงประกาศปล่อยพระเครื่องใหม่
+            </a>
+            <button onclick="document.getElementById('add_collection_modal').style.display='flex';" class="btn btn_outline" style="padding: 0.65rem 1.25rem;">
                 + นำพระเข้ากรุสะสม
             </button>
         </div>

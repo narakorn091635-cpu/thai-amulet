@@ -75,6 +75,7 @@ if (!function_exists('render_site_header')) {
                 <li><a href="<?php echo htmlspecialchars($relative_root, ENT_QUOTES, 'UTF-8'); ?>/leaderboard.php" style="color: var(--gold-bright);">🏆 ทำเนียบพระแชมป์</a></li>
                 <li><a href="<?php echo htmlspecialchars($relative_root, ENT_QUOTES, 'UTF-8'); ?>/verify_cert.php">🛡️ ตรวจใบเซอร์</a></li>
                 <?php if ($is_user_logged): ?>
+                    <li><a href="<?php echo htmlspecialchars($relative_root, ENT_QUOTES, 'UTF-8'); ?>/member_add_amulet.php" style="color: var(--gold-bright); background: rgba(233,215,147,0.12); border: 1px solid var(--gold-border); border-radius: 999px; padding: 0.35rem 0.85rem;">+ ปล่อยพระ</a></li>
                     <li><a href="<?php echo htmlspecialchars($relative_root, ENT_QUOTES, 'UTF-8'); ?>/collection_showcase.php" style="color: #73d13d;">🏺 กรุพระของฉัน</a></li>
                     <li><a href="<?php echo htmlspecialchars($relative_root, ENT_QUOTES, 'UTF-8'); ?>/wishlist.php" style="color: #ffd666;">❤️ พระที่ถูกใจ</a></li>
                     <!-- Notification Bell Dropdown -->
